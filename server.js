@@ -1,42 +1,25 @@
-const express = require('express')
-const mongoose = require('mongoose')
-require('dotenv').config()
+const express = require('express');
+const mongoose = require('mongoose');
+const { connectDb, checkconnected } = require('./db');
+const routes = require('./route');
 
-
-const app = express()
-
-const connectDb = async()=>{
-    try{
-        await mongoose.connect(process.env.MONGO_URI);
-    }catch(err){
-        console.error(err)
-    }
-}
-connectDb()
-app.get('/ping',(req,res)=>{
-    res.send('pong')
-})
-app.get('/',(req,res)=>{
-    const dbStatus = mongoose.connection.readyState;
-  let message;
-  switch (dbStatus) {
-    case 0:
-      message = 'Disconnected';
-      break;
-    case 1:
-      message = 'Connected';
-      break;
-    case 2:
-      message = 'Connecting';
-      break;
-    case 3:
-      message = 'Disconnecting';
-      break;
-    default:
-      message = 'Unknown';
+const app = express();
+connectDb();
+app.use(express.json());
+app.get('/ping', (req, res) => {
+  res.send('pong');
+});
+app.get('/', (req, res) => {
+  if (checkconnected()) {
+    res.send('Database connection status: Connected');
+  } else {
+    res.send('Database connection status: Connection failed');
   }
-  res.send(`Database connection status: ${message}`)
-})
-app.listen(3000,()=>{
-    console.log('server running')
-})
+});
+
+app.use('/api', routes);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
