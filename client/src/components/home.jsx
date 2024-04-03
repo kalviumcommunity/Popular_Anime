@@ -5,14 +5,14 @@ function Home() {
   return (
     <div className='Body'>
       <div>
-        <h1>Popular <br /> Animes</h1>
+        <h1>Popular Animes</h1>
       </div>
       <div>
         <h3>Special Categories</h3>
         <p>There are many other great anime series and movies,<br />
            out there to explore. With so much variety<br/> to choose from,to everyone's taste.</p>
           <nav>
-            <Link to='/mainpage' className='explore'>Let's Explore →</Link>
+            <Link to='/mainpage' className='explore'>View More →</Link>
           </nav>
       </div>
       <nav>

@@ -5,7 +5,7 @@
     font-family: "Orbitron", sans-serif;
 }
 body {
-    background-image: url('https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_640.jpg');
+    background-image: url('../assets/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,8 +16,8 @@ body {
 h1 {
     color: white;
     position: relative;
-    right: 480px;
-    top: 270px;
+    right: 340px;
+    top: 170px;
     text-align: center; 
     font-size: 2.7rem;
 }
@@ -26,28 +26,28 @@ h3{
     font-size: 1.2rem;
     text-align: center; 
     position: relative;
-    right: 360px;
-    top: 360px;
+    right: 270px;
+    top: 230px;
 }
 p{
-    color: rgba(255, 255, 255, 0.441);
-    font-size: 0.9rem;
+    color: #fff;
+    font-size: 1.1rem;
     position: relative;
-    left: 260px;
-    top: 380px;
+    left: 200px;
+    top: 270px;
 }
 .links{
     position: relative;
-    left: 850px;
-    bottom: 170px;
+    left: 800px;
+    bottom: 115px;
     text-decoration: none;
-    color: white;
-    margin-left: 30px;
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
 }
 .explore{
     position: relative;
-    top: 405px;
-    left: 260px;
+    top: 315px;
+    left: 400px;
     text-decoration: none;
     color: white;
 }
