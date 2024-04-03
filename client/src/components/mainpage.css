@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rowdies:wght@300;400;700&family=Varela+Round&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Orbitron", sans-serif;
+}
+.Background{
+    background-color: #001e4d;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh; 
+    overflow-x: hidden;
+}
+
+.link{
+    position: relative;
+    left: 750px;
+    top: -540px;
+    text-decoration: none;
+    color: white;
+    margin-left: 50px;
+}
+.ani-name{
+    position: relative;
+    left: 160px;
+    top: 70px;
+    font-size: 2rem;
+}
+.ani-authorname{
+    position: relative;
+    left: 160px;
+    top: 80px;
+    font-weight: 50;
+    color: rgba(255, 255, 255, 0.593);
+}
+.anime-data{
+    position: relative;
+    left:230px;
+    top: 170px;
+    font-size: 0.8rem;
+}
+.theme{
+    position: relative;
+    left: -335px;
+    top: 362px;
+    font-weight: 100;
+}
+.start-date{
+    position: relative;
+    left: -351px;
+    top: 350px;
+    font-weight: 100;
+}
+.character{
+    position: relative;
+    left: -354px;
+    top: 375px;
+    font-weight: 100;
+}
+.anime-datas{
+    position: relative;
+    left:710px;
+    top: 470px;
+    font-size: 1.2rem;
+}
+.sta-date{
+    position: relative;
+    top: -20px;
+    right: 50px;
+    color: rgba(255, 255, 255, 0.546);
+    font-weight: 100;
+}
+.the{
+    position: relative;
+    bottom: 3px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.546);
+    font-weight: 100;
+}
+.char{
+    position: relative;
+    top: 12px;
+    right: 60px;
+    color: rgba(255, 255, 255, 0.546);
+    font-weight: 100;
+    width: 250px;
+}
+.ani-image{
+    position: relative;
+    top: -20px;
+    left: 360px;
+    height: 360px;
+    width: 500px;
+    
+}
+.back-btn{
+    position: relative;
+    left: 90px;
+    top: 120px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+}
+.next-btn{
+    position: relative;
+    left: 1000px;
+    top: 120px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+}
