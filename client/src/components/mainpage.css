@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rowdies:wght@300;400;700&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Itim", sans-serif;
 }
 .Background{
     background-color: #001e4d;
@@ -12,14 +12,16 @@
     height: 100vh; 
     overflow-x: hidden;
 }
-
 .link{
-    position: relative;
-    left: 750px;
-    top: -540px;
     text-decoration: none;
     color: white;
-    margin-left: 50px;
+    margin-left: 30px;
+}
+.all{
+    position: absolute;
+    left: 1050px;
+    top: 50px;
+    
 }
 .ani-name{
     position: relative;
@@ -36,7 +38,7 @@
 }
 .anime-data{
     position: relative;
-    left:230px;
+    left:710px;
     top: 170px;
     font-size: 0.8rem;
 }
@@ -60,7 +62,7 @@
 }
 .anime-datas{
     position: relative;
-    left:710px;
+    left:1210px;
     top: 470px;
     font-size: 1.2rem;
 }
@@ -88,25 +90,36 @@
 }
 .ani-image{
     position: relative;
-    top: -20px;
-    left: 360px;
+    top: 30px;
+    left: 390px;
     height: 360px;
-    width: 500px;
-    
+    width: 560px;
 }
 .back-btn{
-    position: relative;
-    left: 90px;
-    top: 120px;
+    position: absolute;
+    left: 1200px;
+    top: 740px;
     background: none;
     border: none;
     color: white;
     font-size: 1.3rem;
+    z-index: 1001;
+}
+.back-button{
+    position: absolute;
+    left: 80px;
+    top: 736px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    z-index: 1001;
+    text-decoration: none;
 }
 .next-btn{
-    position: relative;
-    left: 1000px;
-    top: 120px;
+    position: absolute;
+    left: 1300px;
+    top: 740px;
     background: none;
     border: none;
     color: white;
