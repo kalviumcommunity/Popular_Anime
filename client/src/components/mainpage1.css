@@ -68,3 +68,20 @@
     color: aliceblue;
     top: 10px;
 }
+ .edit-btn{
+    text-decoration: none;
+    position: relative;
+    color: hsl(249, 100%, 51%);
+    /* color: aliceblue;
+    font-size: 1.7rem;
+    top: 50px;
+    right: 10px; */
+
+} 
+.delete-btn{
+    position: relative;
+    text-decoration: none;
+    color: red;
+    top: 70px;
+    right: 15px;
+}
