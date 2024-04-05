@@ -1,31 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rowdies:wght@300;400;700&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Itim", sans-serif;
 }
 .Background{
     background-color: #001e4d;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     height: 100vh; 
     overflow-x: hidden;
 }
 
 .link{
-    position: relative;
-    left: 750px;
-    top: -540px;
     text-decoration: none;
     color: white;
-    margin-left: 50px;
+    margin-left: 30px;
+    position: relative;
+    right: 200px;
+}
+.all{
+    position: absolute;
+    left: 1050px;
+    top: 50px;
+    
 }
 .ani-name{
     position: relative;
-    left: 160px;
+    left: 760px;
     top: 70px;
-    font-size: 2rem;
+    font-size: 0.8rem;
 }
 .ani-authorname{
     position: relative;
@@ -36,33 +39,48 @@
 }
 .anime-data{
     position: relative;
-    left:230px;
-    top: 170px;
+    left:280px;
+    top: 150px;
     font-size: 0.8rem;
 }
+/* .anime{
+    position: relative;
+    left: -355px;
+    top: 338px;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+.authorname{
+    position: relative;
+    left: -355px;
+    top: 348px;
+    font-size: 1.2rem;
+    font-weight: 100;
+} */
 .theme{
     position: relative;
     left: -335px;
-    top: 362px;
+    top: 366px;
     font-weight: 100;
 }
 .start-date{
     position: relative;
     left: -351px;
-    top: 350px;
+    top: 356px;
     font-weight: 100;
 }
 .character{
     position: relative;
     left: -354px;
-    top: 375px;
+    top: 377px;
     font-weight: 100;
 }
 .anime-datas{
     position: relative;
-    left:710px;
-    top: 470px;
+    left: 750px;
+    top: 450px;
     font-size: 1.2rem;
+    color: aliceblue;
 }
 .sta-date{
     position: relative;
@@ -74,14 +92,14 @@
 .the{
     position: relative;
     bottom: 3px;
-    right: 20px;
+    right: 50px;
     color: rgba(255, 255, 255, 0.546);
     font-weight: 100;
 }
 .char{
     position: relative;
     top: 12px;
-    right: 60px;
+    right: 50px;
     color: rgba(255, 255, 255, 0.546);
     font-weight: 100;
     width: 250px;
@@ -89,24 +107,35 @@
 .ani-image{
     position: relative;
     top: -20px;
-    left: 360px;
+    left: 370px;
     height: 360px;
-    width: 500px;
-    
+    width: 560px;
 }
 .back-btn{
-    position: relative;
-    left: 90px;
-    top: 120px;
+    position: absolute;
+    left: 1050px;
+    top: 600px;
     background: none;
     border: none;
     color: white;
     font-size: 1.3rem;
+    z-index: 1001;
+}
+.back-button{
+    position: absolute;
+    left: 80px;
+    top: 606px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    z-index: 1001;
+    text-decoration: none;
 }
 .next-btn{
-    position: relative;
-    left: 1000px;
-    top: 120px;
+    position: absolute;
+    left: 1200px;
+    top: 600px;
     background: none;
     border: none;
     color: white;

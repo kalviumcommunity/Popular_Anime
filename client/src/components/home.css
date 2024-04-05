@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rowdies:wght@300;400;700&family=Varela+Round&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Itim", sans-serif;
 }
-body {
+.Body {
     background-image: url('../assets/background.jpg');
     background-size: cover;
     background-position: center;
@@ -50,4 +50,20 @@ p{
     left: 400px;
     text-decoration: none;
     color: white;
+} 
+#dynamic-btn{
+    position: relative;
+    left: 1070px;
+    top: -135px;
+}
+#logout-btn{
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+#signin-btn{
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    text-decoration: none;
 }

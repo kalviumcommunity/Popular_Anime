@@ -1,0 +1,69 @@
+.loginbody{
+    background-color: #1a0f35;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    overflow-x: hidden;
+}
+.login-field{
+    position: absolute;
+    left: 975px;
+    top: 140px;
+    background-color: #0b0125;
+    padding-bottom: 330px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 100px;
+    border-radius: 15px 0px 0px 15px;
+    box-shadow: 0 3px 3px #0038c79a;
+}
+.login-field input{
+    font-size: 0.9rem;
+    padding-left: 50px;
+}
+.para{
+    position: relative;
+    left: 3px;
+    top: -10px;
+}
+#signup{
+    position: relative;
+    left: 140px;
+    bottom: 60px;
+    font-size: 2rem;
+}
+#username,#password,#confpassword{
+    position: absolute;
+    top: 220px;
+    background: none;
+    border: 1px solid white;
+    width: 350px;
+    height: 45px;
+    border-radius: 15px;
+}
+#password{
+    top: 290px;
+}
+#confpassword{
+    top: 360px;
+}
+#submit{
+    position: relative;
+    top: 290px;
+    left: 140px;
+    font-size: 1.3rem;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding:5px 15px 5px 15px ;
+    border-radius:15px ;
+}
+.backtohome-btn{
+    position: relative;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    left: 1200px;
+    bottom: -751px;
+}

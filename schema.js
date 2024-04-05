@@ -20,6 +20,10 @@ const data = new mongoose.Schema({
       character: {
         type: String,
         required: true
+      },
+      image_url: {
+        type: String,
+        required: false
       }
 });
 const dataSet = mongoose.model('dataSet',data);
