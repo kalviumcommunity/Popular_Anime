@@ -60,3 +60,11 @@
 #add-anime:hover {
     color: #ff0883;
 }
+#add-ani{
+    position: relative;
+    left: 1000px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: aliceblue;
+    top: 10px;
+}

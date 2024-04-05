@@ -55,6 +55,8 @@ function Main() {
         {ani.length > 0 && <h4 className='ani-authorname'>{ani[index].authorname}</h4>}
       </div>
       <div className='anime-data'>
+        {/* <h3 className='anime'>Anime Name:</h3>
+        <h3 className='authorname'>Author Name:</h3> */}
         <h3 className='start-date'>Start Date: </h3>
         <h3 className='theme'>Theme:</h3>
         <h3 className='character'> Character:</h3>

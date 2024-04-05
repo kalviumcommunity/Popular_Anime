@@ -25,9 +25,7 @@ function Main1() {
                 <Link to='/apipage' className='link1'>Api</Link>
             </nav>
             <h1 id="title">List of Popular <br /> Animes</h1>
-            <button id="add-anime">
-            <Link to='/'>Add New Animes</Link>
-            </button>
+            <Link to='/updateani' id="add-ani">Add New Animes +</Link>
             <div className="anis">
             {
                    ani.map((data, dataIndex) => (

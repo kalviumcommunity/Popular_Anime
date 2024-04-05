@@ -26,9 +26,9 @@
 }
 .ani-name{
     position: relative;
-    left: 160px;
+    left: 760px;
     top: 70px;
-    font-size: 2rem;
+    font-size: 0.8rem;
 }
 .ani-authorname{
     position: relative;
@@ -43,22 +43,36 @@
     top: 150px;
     font-size: 0.8rem;
 }
+/* .anime{
+    position: relative;
+    left: -355px;
+    top: 338px;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+.authorname{
+    position: relative;
+    left: -355px;
+    top: 348px;
+    font-size: 1.2rem;
+    font-weight: 100;
+} */
 .theme{
     position: relative;
     left: -335px;
-    top: 362px;
+    top: 366px;
     font-weight: 100;
 }
 .start-date{
     position: relative;
     left: -351px;
-    top: 350px;
+    top: 356px;
     font-weight: 100;
 }
 .character{
     position: relative;
     left: -354px;
-    top: 375px;
+    top: 377px;
     font-weight: 100;
 }
 .anime-datas{
@@ -92,7 +106,7 @@
 }
 .ani-image{
     position: relative;
-    top: -10px;
+    top: -20px;
     left: 370px;
     height: 360px;
     width: 560px;

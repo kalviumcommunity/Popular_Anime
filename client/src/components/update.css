@@ -8,13 +8,13 @@
 }
 #title1{
     position: relative;
-    top: 80px;
-    margin-left: 100px;
+    top: 25px;
+    margin-left: 700px;
 }
 form{
     position: relative;
     left: 120px;
-    top: 320px;
+    top: 200px;
 }
 input{
     color: white;
@@ -22,101 +22,110 @@ input{
 .add-ani-name{
     position: relative;
     bottom: 135px;
-    right: 40px;
+    left: 340px;
     font-size: 1.5rem;
 }
 .add-ani-name input{
-    width: 500px;
+    width: 270px;
     position: relative;
     bottom: 4px;
     left: 15px;
-    height: 20px;
+    height: 27px;
     background: none;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 6px;
 }
 .add-ani-authorname{
     position: relative;
     bottom: 80px;
-    right: 40px;
+    left: 337px;
     font-size: 1.5rem;
 }
 .add-ani-authorname input{
-    width: 470px;
+    width: 267px;
     position: relative;
     bottom: 4px;
     left: 15px;
-    height: 20px;
+    height: 27px;
     background: none;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 6px;
 }
 .add-start-date{
     position: relative;
     bottom: 25px;
-    right: 40px;
+    left: 340px;
     font-size: 1.5rem;
 }
 .add-start-date input{
-    width: 515px;
+    width: 295px;
     position: relative;
     bottom: 4px;
     left: 15px;
-    height: 20px;
+    height: 27px;
     background: none;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 6px;
 }
 .add-theme{
     position: relative;
     top: 35px;
-    right: 40px;
+    left: 340px;
     font-size: 1.5rem;
 }
 .add-theme input{
-    width: 475px;
+    width: 335px;
     position: relative;
     bottom: 4px;
     left: 15px;
-    height: 20px;
+    height: 27px;
     background: none;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 6px;
 }
 .add-character{
     position: relative;
     top: 80px;
-    right: 40px;
+    left: 340px;
     font-size: 1.5rem;
 }
 .add-character input{
-    width: 525px;
+    width: 245px;
     position: relative;
     bottom: 4px;
     left: 15px;
-    height: 20px;
+    height: 27px;
     background: none;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 6px;
 }
 .submit-btn{
     position: relative;
-    left: 560px;
-    top: 170px;
-    border: 1px solid white;
+    width: 100px;
+    left: 520px;
+    top: 150px;
+    border: 3px solid white;
     background: none;
     color: white;
     padding: 5px 20px 5px 20px;
     font-size: 1rem;
-    box-shadow: 5px 5px 4px rgba(255, 255, 255, 0.3);
+}
+.submit-btn:hover{
+    background-color: #ff028d;
 }
 .add-image-url{
     position: relative;
     top: 120px;
-    right: 40px;
+    left: 340px;
     font-size: 1.5rem;
 }
 .add-image-url input{
-    width: 525px;
+    width: 305px;
     position: relative;
     bottom: 4px;
     left: 15px;
-    height: 20px;
+    height: 27px;
     background: none;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 6px;
 }

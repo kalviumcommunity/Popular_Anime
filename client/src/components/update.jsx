@@ -14,7 +14,7 @@ function Update(){
     const [character,setCharacter]=useState()
     const [image_url,setImageurl]=useState()
     const navigate = useNavigate()
-    const submit =(e)=>{
+    const submit =(e)=> {
         e.preventDefault();
         axios.post("http://localhost:3000/api/add-anime",{ anime,authorname,start_date,theme,character,image_url})
         .then(result=>{
