@@ -35,18 +35,23 @@ function Login(){
         try {
             const response = await axios.post('http://localhost:3000/api/login', { userName, password });
             if (response.status === 200) {
-              setCookie('username', userName, 365);
-              setCookie('password', password, 365);
-              sessionStorage.setItem('loginSuccess', 'Login successful');
-              sessionStorage.setItem('login', true);
-              navigate("/mainpage");
+                setCookie('username', userName, 365);
+                setCookie('password', password, 365);
+                sessionStorage.setItem('loginSuccess', 'Login successful');
+                sessionStorage.setItem('login', true);
+                navigate("/mainpage");
             } else {
-              console.log('Failed to log in');
+                console.log('Failed to log in');
             }
-          } catch (err) {
-            console.error(err);
-            console.log('User does not exist or there was an error');
-          }
+        } catch (err) {
+            console.log(err);
+            if (err.response && err.response.status === 401) {
+                alert('Invalid credentials');
+            } else {
+                alert('User does not exist or there was an error');
+            }
+        }
+        
         }
     return (
         <>
@@ -54,7 +59,6 @@ function Login(){
             <form onSubmit={handleSubmit} className="login-field">
                 <h2 id="signup">Sign up</h2>
                 <p className="para">Sign up to continue to anime website!</p>
-
                 <div>
                     <input type="text" placeholder="username" id="username" onChange={(e) => setUserName(e.target.value)} required />
                 </div>

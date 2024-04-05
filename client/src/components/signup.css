@@ -8,15 +8,15 @@
 }
 .login-field{
     position: absolute;
-    left: 975px;
-    top: 140px;
+    left: 475px;
+    top: 70px;
     background-color: #0b0125;
     padding-bottom: 330px;
-    padding-left: 40px;
+    padding-left: 50px;
     padding-right: 40px;
-    padding-top: 100px;
-    border-radius: 15px 0px 0px 15px;
-    box-shadow: 0 3px 3px #0038c79a;
+    padding-top: 40px;
+    border-radius: 15px;
+    border: 3px solid white;
 }
 .login-field input{
     font-size: 0.9rem;
@@ -25,20 +25,20 @@
 .para{
     position: relative;
     left: 3px;
-    top: -10px;
+    top: 40px;
 }
 #signup{
     position: relative;
-    left: 140px;
-    bottom: 60px;
+    left: 90px;
+    bottom: -5px;
     font-size: 2rem;
 }
 #username,#password,#confpassword{
     position: absolute;
-    top: 220px;
+    top: 200px;
     background: none;
     border: 1px solid white;
-    width: 350px;
+    width: 230px;
     height: 45px;
     border-radius: 15px;
 }
@@ -50,8 +50,8 @@
 }
 #submit{
     position: relative;
-    top: 290px;
-    left: 140px;
+    top: 270px;
+    left: 100px;
     font-size: 1.3rem;
     background: none;
     border: 1px solid white;
@@ -64,6 +64,6 @@
     font-size: 1.2rem;
     text-decoration: none;
     color: white;
-    left: 1200px;
-    bottom: -751px;
+    left: 880px;
+    bottom: -601px;
 }
