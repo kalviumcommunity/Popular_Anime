@@ -4,7 +4,8 @@ import Home from './components/home'
 import About from './components/aboutpage'
 import Apipage from './components/apipage'
 import Mainpage from './components/mainpage'
-import Main1 from './components/main1'
+import Mainpage1 from './components/mainpage1'
+import Update from './components/update';
 function App() {
   return (
     <>
@@ -13,10 +14,11 @@ function App() {
         <Route path='/about' element={<About/>}></Route>
         <Route path='/apipage' element={<Apipage/>}></Route>
         <Route path='/mainpage1' element={<Mainpage/>}></Route>
-        <Route path='/mainpage' element={<Main1/>}></Route>
+        <Route path='/mainpage' element={<Mainpage1/>}></Route>
+        <Route path='/updateAni' element={<Update/>}></Route>
       </Routes>
     </>
-  );
+  )
 }
 
 export default App;

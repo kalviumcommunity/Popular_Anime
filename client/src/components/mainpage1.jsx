@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import './main1.css'
+import './mainpage1.css'
 function Main1() {
     const [ani, setAni] = useState([]);
     useEffect(() => {
@@ -17,7 +17,7 @@ function Main1() {
         console.log(indexpos)
     }
     return (
-        <div className="container">
+        <div className="org">
             <nav >
                 <Link to='/' className='link1'>Home</Link>
                 <Link to='/about' className='link1'>About</Link>
@@ -25,16 +25,18 @@ function Main1() {
                 <Link to='/apipage' className='link1'>Api</Link>
             </nav>
             <h1 id="title">List of Popular <br /> Animes</h1>
-
+            <button id="add-anime">
+            <Link to='/'>Add New Animes</Link>
+            </button>
             <div className="anis">
             {
                    ani.map((data, dataIndex) => (
-                    <Link key={data._id} to={{ pathname: "/main1"}}>
+                    <Link key={data._id} to={{ pathname: "/mainpage1"}}>
                       <button 
                         className="ani-names"  
                         onClick={() => sendIndex(dataIndex)} // Corrected
                       >
-                        {data.anime}
+                        {data.animeName}
                       </button>
                     </Link>
                   ))

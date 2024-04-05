@@ -7,15 +7,16 @@
 .Background{
     background-color: #001e4d;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     height: 100vh; 
     overflow-x: hidden;
 }
+
 .link{
     text-decoration: none;
     color: white;
     margin-left: 30px;
+    position: relative;
+    right: 200px;
 }
 .all{
     position: absolute;
@@ -38,8 +39,8 @@
 }
 .anime-data{
     position: relative;
-    left:710px;
-    top: 170px;
+    left:280px;
+    top: 150px;
     font-size: 0.8rem;
 }
 .theme{
@@ -62,9 +63,10 @@
 }
 .anime-datas{
     position: relative;
-    left:1210px;
-    top: 470px;
+    left: 750px;
+    top: 450px;
     font-size: 1.2rem;
+    color: aliceblue;
 }
 .sta-date{
     position: relative;
@@ -76,29 +78,29 @@
 .the{
     position: relative;
     bottom: 3px;
-    right: 20px;
+    right: 50px;
     color: rgba(255, 255, 255, 0.546);
     font-weight: 100;
 }
 .char{
     position: relative;
     top: 12px;
-    right: 60px;
+    right: 50px;
     color: rgba(255, 255, 255, 0.546);
     font-weight: 100;
     width: 250px;
 }
 .ani-image{
     position: relative;
-    top: 30px;
-    left: 390px;
+    top: -10px;
+    left: 370px;
     height: 360px;
     width: 560px;
 }
 .back-btn{
     position: absolute;
-    left: 1200px;
-    top: 740px;
+    left: 1050px;
+    top: 600px;
     background: none;
     border: none;
     color: white;
@@ -108,7 +110,7 @@
 .back-button{
     position: absolute;
     left: 80px;
-    top: 736px;
+    top: 606px;
     background: none;
     border: none;
     color: white;
@@ -118,8 +120,8 @@
 }
 .next-btn{
     position: absolute;
-    left: 1300px;
-    top: 740px;
+    left: 1200px;
+    top: 600px;
     background: none;
     border: none;
     color: white;
