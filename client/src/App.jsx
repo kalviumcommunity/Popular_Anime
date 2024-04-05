@@ -8,6 +8,7 @@ import Mainpage1 from './components/mainpage1'
 import Update from './components/update';
 import Edit from './components/edit';
 import Loginpage from './components/loginpage';
+import Signup from './components/signup';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
         <Route path='/updateani' element={<Update/>}></Route>
         <Route path='/editani/:id' element={<Edit/>}></Route>
         <Route path='/loginpage' element={<Loginpage/>}></Route>
+        <Route path='/signup' element={<Signup/>}></Route>
       </Routes>
     </>
   )

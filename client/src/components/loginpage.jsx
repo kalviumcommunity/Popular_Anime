@@ -1,51 +1,71 @@
-import React from "react"
-import "./loginpage.css"
-// import image from './assets/login.jpg'
-// import user from './assets/User-3.png'
-// import pass from './assets/Password.png'
-// import lock from './assets/Lock.png'
-import { Link } from 'react-router-dom';
-import { useState } from "react"
-const Login =()=>{
-    const [userName,setUserName]=useState()
-    const [password,setPassword]=useState()
-    const [confirmPassword,setConfirmPassword]=useState()
-    const updateUsertoCookie =(e)=>{
-        e.preventDefault();
-        if(password!=confirmPassword){
-            alert("password do not match");
-            return;
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import "./signup.css";
+import axios from "axios";
+import { Link, useNavigate } from 'react-router-dom';
+function Login(){
+    const navigate = useNavigate();
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [loginMessage, setLoginMessage] = useState('');
+  
+    useEffect(() => {
+      let timer;
+      if (loginMessage) {
+        timer = setTimeout(() => {
+          setLoginMessage('');
+        }, 3000); 
+      }
+      return () => clearTimeout(timer); 
+    }, [loginMessage]);
+  
+    const setCookie = (name, value, days) => {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:3000/api/login', { userName, password });
+            if (response.status === 200) {
+              setCookie('username', userName, 365);
+              setCookie('password', password, 365);
+              sessionStorage.setItem('loginSuccess', 'Login successful');
+              sessionStorage.setItem('login', true);
+              navigate("/mainpage");
+            } else {
+              console.log('Failed to log in');
+            }
+          } catch (err) {
+            console.error(err);
+            console.log('User does not exist or there was an error');
+          }
         }
-        const date=new Date();
-        date.setTime(date.getTime() + 360*24*60*60*1000)
-        let expires="expires="+date.toUTCString();
-        document.cookie=`username=${userName};${expires}`;
-        document.cookie=`password=${password};${expires}`;
-
-        setUserName("");
-        setPassword("");
-        setConfirmPassword("");
-        location.href='http://localhost:5173/mainpage'
-    }
-    return(
-        <div className="loginbody">
-            <form onSubmit={updateUsertoCookie} className="login-field">
+    return (
+        <>
+            <div className="loginbody">
+            <form onSubmit={handleSubmit} className="login-field">
                 <h2 id="signup">Sign up</h2>
-                <p className="para">Sign up to continue the anime website!</p>
+                <p className="para">Sign up to continue to anime website!</p>
 
                 <div>
-                    <input type="text" placeholder="username" id="username" onChange={(e)=>setUserName(e.target.value)} required/>
+                    <input type="text" placeholder="username" id="username" onChange={(e) => setUserName(e.target.value)} required />
                 </div>
                 <div>
-                    <input type="password" placeholder="password" id="password"  onChange={(e)=>setPassword(e.target.value)} required/>
+                    <input type="password" placeholder="password" id="password" onChange={(e) => setPassword(e.target.value)} required />
                 </div>
-                <div>
-                    <input type="password" placeholder="confirm password" id="confpassword"  onChange={(e)=>setConfirmPassword(e.target.value)} required/>
-                </div>
-                <button type="submit" id="submit">Sign up</button>
+                <button type="submit" id="submit">Log in</button>
             </form>
             <Link to='/' className="backtohome-btn">← Back to home</Link>
         </div>
+        </>
     )
 }
-export default Login
+export default Login;
