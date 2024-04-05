@@ -1,75 +1,126 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import "./signup.css";
+// import React, { useState } from "react";
+// import { useNavigate, Link } from 'react-router-dom';
+// import "./signup.css";
+
+// function Login() {
+//     const navigate = useNavigate();
+//     const [userName, setUserName] = useState('');
+//     const [password, setPassword] = useState('');
+
+//     const handleSubmit = async (e) => {
+//         e.preventDefault();
+//         try {
+//             const response = await fetch('http://localhost:3000/api/login', {
+//                 method: "POST",
+//                 headers: { "Content-Type": "application/json" },
+//                 body: JSON.stringify({ userName, password })
+//             });
+
+//             if (response.ok) {
+//                 const feedback = await response.json();
+//                 const { accessToken, userName } = feedback;
+//                 const currentDate = new Date();
+//                 const nextYear = new Date(currentDate);
+//                 nextYear.setUTCFullYear(nextYear.getUTCFullYear() + 1);
+//                 const expires = nextYear.toUTCString();
+//                 document.cookie = `accessToken=${accessToken};expires=${expires};path=/;`;
+//                 document.cookie = `user=${userName};expires=${expires};path=/;`;
+//                 console.log("Login successful");
+//                 navigate('/');
+//             } else {
+//                 console.log("Login error");
+//             }
+//         } catch (err) {
+//             console.error(err);
+//         }
+//     }
+
+//     return (
+//         <div className="loginbody">
+//             <form onSubmit={handleSubmit} className="login-field">
+//                 <h2 id="signup">Sign up</h2>
+//                 <p className="para">Sign up to continue to anime website!</p>
+
+//                 <div>
+//                     <input type="text" placeholder="username" id="username" value={userName} onChange={(e) => setUserName(e.target.value)} required />
+//                 </div>
+//                 <div>
+//                     <input type="password" placeholder="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+//                 </div>
+//                 <button type="submit" id="submit">Log in</button>
+//             </form>
+//             <Link to='/' className="backtohome-btn">← Back to home</Link>
+//         </div>
+//     );
+// }
+
+// export default Login;
+
+
+
+import React, { useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom';
-function Login(){
+
+function Login() {
     const navigate = useNavigate();
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [loginMessage, setLoginMessage] = useState('');
-  
-    useEffect(() => {
-      let timer;
-      if (loginMessage) {
-        timer = setTimeout(() => {
-          setLoginMessage('');
-        }, 3000); 
-      }
-      return () => clearTimeout(timer); 
-    }, [loginMessage]);
-  
-    const setCookie = (name, value, days) => {
-      let expires = "";
-      if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-      }
-      document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
         try {
-            const response = await axios.post('http://localhost:3000/api/login', { userName, password });
+            const response = await axios.post('http://localhost:3000/api/login', {
+                userName,
+                password
+            });
+
+            const feedback = response.data;
+
             if (response.status === 200) {
-                setCookie('username', userName, 365);
-                setCookie('password', password, 365);
-                sessionStorage.setItem('loginSuccess', 'Login successful');
-                sessionStorage.setItem('login', true);
-                navigate("/mainpage");
+                const { accessToken, userId } = feedback;
+                console.log(feedback);
+                const currentDate = new Date();
+                const nextYear = new Date(currentDate);
+                nextYear.setUTCFullYear(nextYear.getUTCFullYear() + 1);
+                const expires = nextYear.toUTCString();
+                document.cookie = `accessToken=${accessToken};expires=${expires};path=/;`;
+                document.cookie = `userId=${userId};expires=${expires};path=/;`;
+                document.cookie = `password=${password};expires=${expires};path=/;`;
+                localStorage.setItem('user', userId);
+                console.log("Login successful");
+                navigate('/');
             } else {
-                console.log('Failed to log in');
+                console.log("Login error");
             }
+            return feedback;
         } catch (err) {
-            console.log(err);
-            if (err.response && err.response.status === 401) {
-                alert('Invalid credentials');
-            } else {
-                alert('User does not exist or there was an error');
-            }
+            console.error(err);
         }
-        
-        }
+    }
+
     return (
-        <>
-            <div className="loginbody">
+        <div className="loginbody">
             <form onSubmit={handleSubmit} className="login-field">
-                <h2 id="signup">Sign up</h2>
+                <h2 id="signup">Login Page</h2>
                 <p className="para">Sign up to continue to anime website!</p>
+
                 <div>
-                    <input type="text" placeholder="username" id="username" onChange={(e) => setUserName(e.target.value)} required />
+                    <input type="text" placeholder="Username" id="username" value={userName} onChange={(e) => setUserName(e.target.value)} />
                 </div>
+
                 <div>
-                    <input type="password" placeholder="password" id="password" onChange={(e) => setPassword(e.target.value)} required />
+                    <input type="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 </div>
+                <div id="ask-sign">Don't have an account? <Link to='/signup' id="ask-signin">Sign up</Link></div>
                 <button type="submit" id="submit">Log in</button>
             </form>
             <Link to='/' className="backtohome-btn">← Back to home</Link>
         </div>
-        </>
-    )
+    );
 }
+
 export default Login;
+
+    
