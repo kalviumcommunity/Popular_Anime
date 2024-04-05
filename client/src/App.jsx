@@ -7,6 +7,7 @@ import Mainpage from './components/mainpage'
 import Mainpage1 from './components/mainpage1'
 import Update from './components/update';
 import Edit from './components/edit';
+import Loginpage from './components/loginpage';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
         <Route path='/mainpage' element={<Mainpage1/>}></Route>
         <Route path='/updateani' element={<Update/>}></Route>
         <Route path='/editani/:id' element={<Edit/>}></Route>
+        <Route path='/loginpage' element={<Loginpage/>}></Route>
       </Routes>
     </>
   )

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -50,4 +50,20 @@ p{
     left: 400px;
     text-decoration: none;
     color: white;
+} 
+#dynamic-btn{
+    position: relative;
+    left: 1070px;
+    top: -135px;
+}
+#logout-btn{
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+#signin-btn{
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    text-decoration: none;
 }
