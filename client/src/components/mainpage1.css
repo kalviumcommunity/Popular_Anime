@@ -85,6 +85,23 @@
     top: 70px;
     right: 15px;
 }
+#userDropdown{
+    position: relative;
+    left: 1000px;
+    bottom: 480px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    background-color: rgb(117, 153, 219);
+    width: 150px;
+    height: 30px;
+    border-radius: 6px;
+}
+option{
+    font-size: 1rem;
+    width: 100px;
+    height: 30px;
+}
 /* #dynamic-btn{
     position: relative;
     left: 1260px;
