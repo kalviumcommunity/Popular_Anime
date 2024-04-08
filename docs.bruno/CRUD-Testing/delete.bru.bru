@@ -5,7 +5,24 @@ meta {
 }
 
 get {
-  url: http://localhost:3000/api/660e225ffde9130f0dd11616
-  body: none
+  url: http://localhost:3000/api
+  body: json
   auth: none
+}
+
+body:json {
+  {
+      "anime": "Bleach",
+      "authorname": "Tite Kubo",
+      "theme": "Human, Nature",
+      "start_date": "October 5, 2004",
+      "character": "Ichigo Kurosaki",
+  },
+  {
+    "anime": "Naruto",
+    "authorname": "Masashi Kishimoto",
+    "theme": "Hardships",
+    "start_date": "October3, 2002",
+    "character": "Naruto Uzumaki"
+  }
 }

@@ -5,8 +5,9 @@ const Joi = require("joi");
 const { validateAnime } = require("./validator"); 
 const person = require('./userSchema')
 const jwt = require('jsonwebtoken')
-require('dotenv').config
-router.get('/', async (req, res) => {
+require('dotenv').config()
+
+router.get('/anime', async (req, res) => {
     try {
         const animes = await anime.find();
         res.json(animes);
@@ -27,6 +28,18 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.get('/anime/:updated_user', async (req, res) => {
+    try {
+        const animesFound = await anime.find({ updated_user: req.params.updated_user });
+        if (animesFound.length === 0) {
+            return res.status(404).json({ error: "No animes found for the specified updated_user" });
+        }
+        res.json(animesFound);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 router.post('/add-anime', async (req, res) => {
     try {
         const validationResult = validateAnime(req.body);
@@ -41,7 +54,7 @@ router.post('/add-anime', async (req, res) => {
     }
 });
 
-router.put('/updateAni/:id', async (req, res) => {
+router.put('/updateani/:id', async (req, res) => {
     try {
         const updatedAnime = await anime.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!updatedAnime) {
@@ -66,55 +79,72 @@ router.delete('/deleteAni/:id', async (req, res) => {
 });
 
 
-// for user login
-router.post('/signup',async(req,res)=>{
-    try{
-        const user = await person.create({
-            userName:req.body.userName,
-            password:req.body.password
-        })
-        res.send(user)
-    }catch(err){
-        console.error(err)
-    }
-  
-})
-
-router.post('/login', async (req, res) => {
+router.get('/users/names', async (req, res) => {
     try {
-        const { username, password } = req.body;
-        const user = await person.findOne({ username, password });
-        
+        const users = await person.find();
+        res.status(200).json(users);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+router.get('/users/:username', async (req, res) => {
+    const { username } = req.params;
+
+    try {
+        const user = await person.findOne({ userName: username });
+
         if (!user) {
-            return res.status(401).json({ error: 'Invalid username / password' });
-        }else{
-            res.status(200).json({ message:'login sucessful' });
+            return res.status(404).json({ error: "User not found" });
         }
+
+        res.status(200).json(user);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+router.post('/signup', async (req, res) => {
+    try {
+        const user = await person.create({
+            userName: req.body.userName,
+            password: req.body.password
+        });
+        res.json(user);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
-  });
+});
 
-  router.post('/logout',(req,res)=>{
-    res.clearCookie('username')
-    res.clearCookie('password')
-  
-    res.status(200).json({message:'Logout succesful'})
-  })
-  router.post('/auth', async(req,res) => {
-    try{
-        const {username,password} = req.body
-    const user = {
-        "username" : username,
-        "password" : password
+router.post('/login', async (req, res) => {
+    try {
+        const { userName, password } = req.body;
+        const user = await person.findOne({ userName: userName, password: password });
+        
+        if (user) {
+            const token = jwt.sign({ userId: user.userName }, process.env.ACCESS_TOKEN);
+            return res.json({ 
+                message: "Login Successful", 
+                name: user.userName, 
+                userId: user._id,
+                accessToken: token 
+            });
+        } else {
+            return res.status(401).json({ error: 'Invalid username / password' });
+        }
+    } catch (error) {
+        console.error(error); 
+        return res.status(500).json({ error: 'Internal Server Error' });
     }
-    const ACCESS_TOKEN = jwt.sign(user, process.env.ACCESS_TOKEN, { expiresIn: '1d' });
-    res.cookie('token',ACCESS_TOKEN,{maxAge:365*24*60*60*100})
-    res.json({ "accessToken": ACCESS_TOKEN });
-  }catch(err){
-    console.error(err)
-    res.status(500).json({error:'Internal Server Error'})
-  }
-  });
+});
+
+
+
+router.post('/logout', (req, res) => {
+    res.clearCookie('access_token'); // Clear the JWT token cookie
+    res.status(200).json({ message: 'Logout successful' });
+});
 module.exports = router;
