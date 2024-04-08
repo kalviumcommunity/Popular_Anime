@@ -69,7 +69,7 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import './mainpage1.css';
 
-function Main1() {
+function Main2() {
     const [ani, setAni] = useState([]);
     const [users, setUsers] = useState([]);
     const [selectedId, setSelectedId] = useState("all");
@@ -132,7 +132,7 @@ function Main1() {
                 <Link to='/apipage' className='link1'>Api</Link>
             </nav>
             <h1 id="title">List of Popular <br /> Animes</h1>
-            <Link to='/updateani' id="add-ani">Add New Animes +</Link>
+            <Link to='/updateani' id="add-ani">Add New Animes</Link>
             <div className="anis">
             {
                 ani.map((data, dataIndex) => (
@@ -142,8 +142,8 @@ function Main1() {
                             onClick={() => sendIndex(dataIndex)}
                         >
                             {data.animeName}
-                            <Link className="edit-btn" to={`/editAni/${data._id}`}> Edit</Link>
-                            <Link className="delete-btn" to='/mainpage' onClick={(e) => handleDelete(data._id)}>Delete</Link>
+                            <Link className="edit-btn" to={`/editAni/${data._id}`}> Edit </Link>
+                            <Link className="delete-btn" to='/mainpage' onClick={(e) => handleDelete(data._id)}>Delete </Link>
                         </button>
                     </Link>
                 ))
@@ -151,7 +151,7 @@ function Main1() {
             </div>
             <div className="dropdown">
                 <select name="userDropdown" id="userDropdown" onChange={handleFilter}>
-                    <option value="all">Users Names</option>
+                    <option value="all">User Names</option>
                     {users.map((user, index) => (
                         <option key={index} value={user._id}>
                             {user.userName}
@@ -163,4 +163,4 @@ function Main1() {
     );
 }
 
-export default Main1;
+export default Main2;

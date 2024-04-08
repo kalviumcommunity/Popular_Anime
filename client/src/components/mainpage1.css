@@ -6,12 +6,12 @@
 }
 .link1{
     position: relative;
-    left: 870px;
+    left: 800px;
     font-size: 1.4rem;
     top: 40px;
     text-decoration: none;
     color: white;
-    margin-left: 30px;
+    margin-left: 40px;
 }
 #title{
     position: relative;
@@ -88,7 +88,7 @@
 #userDropdown{
     position: relative;
     left: 1000px;
-    bottom: 480px;
+    bottom: 470px;
     background: none;
     color: white;
     border: 1px solid white;
