@@ -9,7 +9,8 @@ const validator = (schema) =>(payload)=>
         start_date: Joi.string().required(),
         theme: Joi.string().required(), 
         character: Joi.string().required(), 
-        image_url: Joi.string()
+        image_url: Joi.string(),
+        updated_user: Joi.string()
     })
 
 exports.validateAnime = validator(animeSchema)

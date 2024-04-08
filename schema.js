@@ -24,6 +24,10 @@ const data = new mongoose.Schema({
       image_url: {
         type: String,
         required: false
+      },
+      updated_user:{
+        type:String,
+        required:true
       }
 });
 const dataSet = mongoose.model('dataSet',data);
