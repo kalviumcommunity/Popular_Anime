@@ -1,0 +1,34 @@
+const mongoose = require('mongoose')
+
+const data = new mongoose.Schema({
+    anime: {
+        type: String,
+        required: true
+      },
+      authorname: {
+        type: String,
+        required: true
+      },
+      start_date: {
+        type: String,
+        required: false
+      },
+      theme: {
+        type: String,
+        required: true
+      },
+      character: {
+        type: String,
+        required: true
+      },
+      image_url: {
+        type: String,
+        required: false
+      },
+      updated_user:{
+        type:String,
+        required:true
+      }
+});
+const dataSet = mongoose.model('dataSet',data);
+module.exports=dataSet;

@@ -1,0 +1,23 @@
+meta {
+  name: put.bru
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:3000/api/login
+  body: json
+  auth: none
+}
+
+body:json {
+    {
+      "_id": "65fc1841206c9aa6a970ca4d",
+      "anime": "One Piece",
+      "authorname": "Eiichiro Oda",
+      "theme": "Freedom",
+      "start_date": "July22,1997",
+      "character": "Monkey D. Luffy\t",
+      "image_url": "https://miro.medium.com/v2/resize:fit:1358/0*pw9xsKqnq2dkGT4P"
+    }
+}

@@ -1,0 +1,74 @@
+ @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Itim", sans-serif;
+}
+.Body {
+    background-image: url('../assets/back.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200vh;
+    height: 100vh; 
+}
+
+h1 {
+    color: white;
+    position: relative;
+    right: 340px;
+    top: 170px;
+    text-align: center;
+    font-size: 2.7rem;
+}
+h3{
+    color: white;
+    font-size: 1.6rem;
+    text-align: center; 
+    position: relative;
+    right: 240px;
+    top: 230px;
+}
+p{
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    left: 200px;
+    top: 270px;
+}
+.links{
+    position: relative;
+    left: 710px;
+    bottom: 145px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+}
+.explore{
+    position: relative;
+    top: 315px;
+    left: 400px;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+} 
+#dynamic-btn{
+    position: relative;
+    left: 1070px;
+    top: -135px;
+}
+#logout-btn{
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+#signin-btn{
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    text-decoration: none;
+    position: relative;
+    left: 10px;
+    bottom: 36px;
+}
