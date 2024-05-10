@@ -1,0 +1,26 @@
+meta {
+  name: patch.bru
+  type: http
+  seq: 3
+}
+
+patch {
+  url: http://localhost:3030/tours
+  body: json
+  auth: none
+}
+
+body:json {
+      {
+        "id": 1,
+        "title": "Westminister Bridge",
+        "city": "India",
+        "address": "Somewhere in India",
+        "distance": 300,
+        "price": 99,
+        "maxGroupSize": 10,
+        "desc": "this is the description",
+        "photo": "/tour-images/tour-img01.jpg",
+        "featured": true
+      }
+}
